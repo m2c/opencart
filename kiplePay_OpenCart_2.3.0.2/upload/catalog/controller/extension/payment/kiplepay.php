@@ -61,6 +61,7 @@ class ControllerExtensionPaymentkiplepay extends Controller
     public function callback()
     {
 
+        $err_msg = ""; $wc_tranx_id = ""; $wc_entry_id = ""; $wc_method = "";
 
         $ordid_kpl = explode('-', $_REQUEST['ord_mercref']);
         $ordid_kp = $ordid_kpl[2];
@@ -76,6 +77,10 @@ class ControllerExtensionPaymentkiplepay extends Controller
             exit;
         }
 
+        $wc_entry_id= (!empty($_REQUEST['entry_id'])) ? $_REQUEST['entry_id'] : "";
+        $wc_method = (!empty($_REQUEST['payment_type'])) ? $_REQUEST['payment_type'] : "";
+        $wc_tranx_id= (!empty($_REQUEST['wcID'])) ? $_REQUEST['wcID'] : "";
+        
         $key = $_REQUEST['ord_key'];
         $returncode = $_REQUEST['returncode'];
         $amountVal = str_replace('.', '', $_REQUEST['ord_totalamt']);
@@ -90,7 +95,7 @@ class ControllerExtensionPaymentkiplepay extends Controller
             $this->cart->clear();
             $result=true;
             $this->load->model('checkout/order');
-            $this->model_checkout_order->addOrderHistory($order_id, $this->config->get('kiplepay_order_status_id'), 'Payment Success. Ref No: '.$_REQUEST['ord_mercref'], true);
+            $this->model_checkout_order->addOrderHistory($order_id, $this->config->get('kiplepay_order_status_id'), 'Payment Success. WC Tranx ID: ('.$wc_tranx_id.'|'.$wc_entry_id.') for Ref No: '.$_REQUEST['ord_mercref'].', Method: '.$wc_method.', Tranx Date & Time : '.gmdate("Y-m-d H:i:s",time()+(8*60*60)).' MYS', true);
             $this->response->redirect($this->url->link('checkout/success'));
         } else {
             $result=false;
