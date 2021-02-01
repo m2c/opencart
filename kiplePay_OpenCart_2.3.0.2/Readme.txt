@@ -5,7 +5,7 @@ This is a Kiplepay plugin for OPENCART version Version 2.3.0.2
 
 Release date:
 =============
-13-05-2020
+01-02-2021
 
 
 Changelog
