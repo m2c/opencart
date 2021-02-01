@@ -71,7 +71,7 @@ class ControllerExtensionPaymentkiplepay extends Controller
 
         $order_det = $this->model_checkout_order->getOrder($order_id);
 
-        if($order_det['order_status_id'] == $this->config->get('payment_kiplepay_order_status_id')){
+        if($order_det['order_status_id'] == $this->config->get('kiplepay_order_status_id')){
             $this->response->redirect($this->url->link('checkout/success', '', true));
             exit;
         }
