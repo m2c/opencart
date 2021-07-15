@@ -2,18 +2,24 @@ Description:
 ============ 
 
 This is a Kiplepay recurring plugin for OPENCART version 3.0.x.x
-  
-
-Release date: 
-============= 
-14-07-2021 
 
 
 Changelog 
 ========== 
-Support OpenCart 3.0.x.x 
+12-12-2020 
+========== 
+* Included recurring payment
 
-* Included yearly recurring payment option.
+1) Fixed missing order intermittent issue when payment returns failed to get response from Kiple.
+2) Fixed double entry issue.
+3) Added Order history for easier info identification both merchant & user.
+4) Opencart admin portal->Kiplepay settings can set order status after payment complete, failed, pending and canceled.
+5) After payment in order comments will have more details include payment method, payment status, reason for failed/canceled payment.
+6) Admin not receiving order confirmation email issue been fixed
+
+14-07-2021
+========== 
+1) Included yearly recurring payment option.
 
 Note 
 ========================= 
