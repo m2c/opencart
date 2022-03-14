@@ -1,6 +1,6 @@
 <?php
 // Heading
-$_['heading_title']                  = 'Kiplepay version v3.1.4';
+$_['heading_title']                  = 'Kiplepay version v3.1.5';
 
 // Text
 $_['text_extension']                 = 'Extensions';

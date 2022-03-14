@@ -56,7 +56,7 @@ class ControllerExtensionPaymentkiplepay extends Controller
 
         $data['ord_date'] = date('Y-m-d h:i:s');
 
-        $data['ord_customfield4'] = "plg_opencart_v3.1.4";
+        $data['ord_customfield4'] = "plg_opencart_v3.1.5";
 
         $amountVal =  $this->currency->format($order_info['total'], $order_info['currency_code'], $order_info['currency_value'], false);
         $amountVal = str_replace('.', '', $amountVal);
@@ -144,6 +144,7 @@ class ControllerExtensionPaymentkiplepay extends Controller
                 $data['ord_recurring_recurrence'] = $duration;
                 $data['ord_recurring_charging_date'] = $charge_date;
                 $data['payment_code'] = "CC";
+                $data['ord_customfield3'] = "opencart_recurring";
 
             }
         }

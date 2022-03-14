@@ -6,11 +6,14 @@ This is a Kiplepay recurring plugin for OPENCART version 3.0.x.x
 
 Release date: 
 ============= 
-01-10-2021 
+03-14-2022
 
 
 Changelog 
-========== 
+==========
+added recurring payment notes
+03-14-2022
+
 Support OpenCart 3.0.x.x 
 
 01-10-2021
